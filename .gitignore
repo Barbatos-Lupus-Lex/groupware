@@ -1,16 +1,11 @@
-# Compiled class file
+### Java (based on GitHub Java template / GitHub Java 템플릿 기반) ###
+# Compiled class files / 컴파일 결과물
 *.class
 
-# Log file
+# Log files / 로그
 *.log
 
-# BlueJ files
-*.ctxt
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
+# Package files / 빌드 패키지
 *.jar
 *.war
 *.nar
@@ -19,6 +14,31 @@
 *.tar.gz
 *.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+# JVM crash logs / JVM 비정상 종료 기록
 hs_err_pid*
 replay_pid*
+
+### Maven ###
+# Build output / 빌드 결과 폴더
+target/
+# Keep the Maven Wrapper jar (exception to *.jar) / Maven Wrapper 실행용 jar는 예외로 올림
+!.mvn/wrapper/maven-wrapper.jar
+
+### IntelliJ IDEA ###
+# IDE settings (personal, may contain DB connection info) / IDE 설정 (개인 설정, DB 연결 정보가 들어갈 수 있음)
+.idea/
+*.iml
+out/
+
+### Secrets (2nd line of defense; 1st is /opt/gw/secrets outside the repo) ###
+### 비밀값 (2차 방어선. 1차는 서버의 저장소 밖 /opt/gw/secrets) ###
+secrets/
+.env
+*.pem
+*.key
+
+### OS ###
+# Windows thumbnail cache / Windows 미리보기 캐시
+Thumbs.db
+# macOS folder metadata / macOS 폴더 정보
+.DS_Store
