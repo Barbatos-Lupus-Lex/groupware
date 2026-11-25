@@ -10,6 +10,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD_FILE: /run/secrets/db_root_password
       MYSQL_DATABASE: groupware
+      MYSQL_ROOT_HOST: localhost
     secrets:
       - db_root_password
       - db_owner_password
