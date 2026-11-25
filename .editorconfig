@@ -1,0 +1,24 @@
+# EditorConfig: editor settings shared by everyone who opens this repo
+# EditorConfig: 이 레포지토리를 여는 모든 편집기가 따르는 설정
+# The repo itself is governed by .gitattributes; keep the two in sync
+# 저장소에 들어가는 모양은 .gitattributes가 정함. 두 파일의 줄바꿈 규칙을 맞춰 둘 것
+root = true
+
+# All files: UTF-8, end with a newline
+# 모든 파일: UTF-8, 파일 끝에 줄바꿈 하나
+[*]
+charset = utf-8
+insert_final_newline = true
+
+# Files used on the Linux server: LF
+# 리눅스 서버에서 쓰는 파일: LF
+[*.{sh,yaml,yml,sql}]
+end_of_line = lf
+
+[mvnw]
+end_of_line = lf
+
+# Windows-only scripts: CRLF
+# Windows 전용 스크립트: CRLF
+[*.{bat,cmd,ps1}]
+end_of_line = crlf
