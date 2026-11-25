@@ -1,0 +1,21 @@
+# Default: let git detect text files, store them with LF in the repo
+# 기본: git이 글자 파일을 알아서 판단하고, 저장소 안에는 LF로 보관
+* text=auto
+
+# Files used on the Linux server: always LF, even on Windows
+# 리눅스 서버에서 실행·사용하는 파일: PC에서도 항상 LF
+*.sh    text eol=lf
+*.yaml  text eol=lf
+*.yml   text eol=lf
+*.sql   text eol=lf
+mvnw    text eol=lf
+
+# Windows-only files: CRLF
+# Windows에서만 쓰는 파일: CRLF
+*.bat   text eol=crlf
+*.cmd   text eol=crlf
+*.ps1   text eol=crlf
+
+# Binary files: never convert line endings
+# 글자 파일이 아님: 줄바꿈 변환 금지
+*.jar   binary
