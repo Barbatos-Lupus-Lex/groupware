@@ -1,0 +1,30 @@
+#공통 compose 파일 : 모든 환경에서 같이 쓰는 부분. 개발은 compose.dev.yaml을 덧붙이고, 배포 전용 설정은 나중에 compose.deploy.yaml에 둠
+#DB 포트는 이 파일에서 공개하지 않는다. 같은 docker 네트워크에서는 서로 접속할 수 있기 때문이다.
+
+services:
+  db:
+    image: mysql:9.7.4
+    restart: unless-stopped
+    command:
+      - --lower-case-table-names=0
+    environment:
+      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/db_root_password
+      MYSQL_DATABASE: groupware
+    secrets:
+      - db_root_password
+      - db_owner_password
+      - db_app_password
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./initdb:/docker-entrypoint-initdb.d:ro
+
+secrets:
+  db_root_password:
+    file: /opt/gw/secrets/db_root_password
+  db_owner_password:
+    file: /opt/gw/secrets/db_owner_password
+  db_app_password:
+    file: /opt/gw/secrets/db_app_password
+
+volumes:
+  db_data:
