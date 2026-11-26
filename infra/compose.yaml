@@ -9,6 +9,7 @@ services:
       - --lower-case-table-names=0
       - --character-set-server=utf8mb4
       - --collation-server=utf8mb4_0900_as_cs
+      - --default-time-zone=+09:00
     environment:
       MYSQL_ROOT_PASSWORD_FILE: /run/secrets/db_root_password
       MYSQL_DATABASE: groupware
